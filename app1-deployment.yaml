@@ -9,7 +9,7 @@ metadata:
   name: app1
   namespace: fastline
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       io.kompose.service: app1
@@ -33,7 +33,7 @@ spec:
               value: "5432"
             - name: DB_USER
               value: postgres
-          image: fastline.local:8082/app1:latest
+          image: localhost:8082/app1:latest
           name: app1
           ports:
             - containerPort: 8000
